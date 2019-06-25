@@ -1,0 +1,132 @@
+{
+  "name": "template",
+  "version": "0.0.1",
+  "description": "The description for the module",
+  "keywords": [],
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "Dozto <do021service@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pardjs/notification.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.3.2",
+    "@nestjs/core": "^6.3.2",
+    "@nestjs/microservices": "^6.3.2",
+    "@nestjs/platform-express": "^6.3.2",
+    "@nestjs/typeorm": "^6.1.2",
+    "@nestjs/websockets": "^6.3.2",
+    "@pardjs/common": "^1.1.2",
+    "@types/supertest": "^2.0.7",
+    "axios": "^0.18.0",
+    "passport": "^0.4.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "typeorm": "^0.2.18"
+  },
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w\" ",
+    "start:debug": "nodemon --config nodemon-debug.json",
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "build:doc": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "test:prod": "npm run lint && npm run test -- --no-cache --coverage --coverageReporters=text-lcov | coveralls",
+    "commit": "git-cz",
+    "precommit": "lint-staged",
+    "release": "np",
+    "prerelease": "npm run build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "@nestjs/testing": "^6.3.2",
+    "@types/jest": "^24.0.13",
+    "@types/nock": "^10.0.3",
+    "@types/node": "^12.0.2",
+    "commitizen": "^3.1.1",
+    "concurrently": "^4.1.0",
+    "coveralls": "^3.0.3",
+    "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "git-cz": "^3.0.1",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "jest-config": "^24.8.0",
+    "lint-staged": "^8.1.7",
+    "nock": "^10.0.6",
+    "np": "^5.0.2",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.14.2",
+    "typedoc-plugin-nojekyll": "^1.0.1",
+    "typescript": "^3.4.5"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec|e2e))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{controller,service,module}.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
