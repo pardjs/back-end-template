@@ -1,5 +1,11 @@
 {
-  "watch": ["dist"],
-  "ext": "js",
-  "exec": "node dist/main"
+  "watch": [
+    "src",
+    "graphql"
+  ],
+  "ext": "ts,graphql",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ],
+  "exec": "ts-node -r tsconfig-paths/register src/main.ts"
 }
