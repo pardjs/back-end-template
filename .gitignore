@@ -10,4 +10,5 @@ compiled
 .rpt2_cache
 tsconfig.tsbuildinfo
 .env
+.env.*
 logs
