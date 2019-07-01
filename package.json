@@ -49,7 +49,7 @@
     "release": "sh ./version.sh",
     "predeploy": "terraform init ./.deploy",
     "deploy": "terraform apply -auto-approve -refresh=true -var-file=project-info.json ./.deploy",
-    "postdeploy": "yarn run postdeploy"
+    "postdeploy": "rm ./terraform.*"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.6.1",

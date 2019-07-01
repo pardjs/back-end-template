@@ -6,6 +6,6 @@ services:
     ports:
       - "${servicePort}:80"
     volumes:
-      - "./logs:/var/log/nginx/log.log"
+      - "./logs:/var/logs"
     env_file:
       - .env

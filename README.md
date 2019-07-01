@@ -4,6 +4,8 @@
 - [ ] CI Solution
 - [ ] CD Solution
 - [ ] API Doc
+- [x] deployment
+- [x] release
 - [x] Health API
 - [x] Project Info API
 - [x] Ping API
