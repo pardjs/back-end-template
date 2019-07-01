@@ -6,6 +6,7 @@
     "commitlint",
     "gmail",
     "lcov",
+    "microservices",
     "nestjs",
     "nojekyll",
     "pardjs",
@@ -13,6 +14,7 @@
     "precommit",
     "typedoc",
     "typeorm",
-    "varchar"
+    "varchar",
+    "websockets"
   ]
 }
