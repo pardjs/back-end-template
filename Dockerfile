@@ -4,6 +4,7 @@ RUN mkdir /usr/share/service
 WORKDIR /usr/share/service
 COPY ./package.json /usr/share/service
 COPY ./yarn.lock /usr/share/service
+ENV NODE_ENV=build
 RUN yarn
 COPY . /usr/share/service
 RUN yarn run build

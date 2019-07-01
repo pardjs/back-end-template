@@ -493,10 +493,10 @@
     lodash "4.17.11"
     path-to-regexp "3.0.0"
 
-"@nestjs/testing@^6.3.2":
-  version "6.3.2"
-  resolved "https://registry.npm.taobao.org/@nestjs/testing/download/@nestjs/testing-6.3.2.tgz#27ee2cb8455a166da9f1bca3d3ab8bb63842bec7"
-  integrity sha1-J+4suEVaFm2p8byj06uLtjhCvsc=
+"@nestjs/testing@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.npm.taobao.org/@nestjs/testing/download/@nestjs/testing-6.4.0.tgz#20fb7d43007805701448fa2c60cdd6c9cd08033a"
+  integrity sha1-IPt9QwB4BXAUSPosYM3Wyc0IAzo=
   dependencies:
     optional "0.1.4"
 
