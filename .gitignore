@@ -12,3 +12,4 @@ tsconfig.tsbuildinfo
 .env
 .env.*
 logs
+.terraform

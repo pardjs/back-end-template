@@ -1,3 +1,5 @@
 {
-  "version": "0.0.1"
+  "projectName": "pardjs",
+  "serviceName": "back-end-template",
+  "appVersion": "0.0.1"
 }

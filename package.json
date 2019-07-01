@@ -45,8 +45,11 @@
     "test:prod": "npm run lint && npm run test -- --no-cache --coverage --coverageReporters=text-lcov | coveralls",
     "commit": "git-cz",
     "precommit": "lint-staged",
-    "release": "np",
-    "prerelease": "npm run build"
+    "prerelease": "npm run build",
+    "release": "sh ./version.sh",
+    "predeploy": "terraform init ./.deploy",
+    "deploy": "terraform apply -auto-approve -refresh=true -var-file=project-info.json ./.deploy",
+    "postdeploy": "yarn run postdeploy"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.6.1",
