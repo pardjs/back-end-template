@@ -27,3 +27,9 @@ brew switch terraform 0.11.13
 ```bash
 npm install yarn -g
 ```
+
+### Server side
+
+- docker
+- docker-compose
+- .env file in project folder
